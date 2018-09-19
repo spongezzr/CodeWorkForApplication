@@ -1,0 +1,5 @@
+SerialNumber,Airline,From,To,delay 1,delay 2,delay 3
+20020,United Airlines,Paris,London,20,4,1
+20030,British Airways,Madrid,Rome,13,0,0
+20040,Air France,Oslo,Newyork,0,0,0
+20050,Swiss Air,Stockholm,Berlin,43,5,0

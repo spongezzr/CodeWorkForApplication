@@ -1,7 +1,7 @@
 ##### Chapter 9: Clustering with k-means -------------------
 
-## Example: Finding Teen Market Segments ----
-## Step 2: Exploring and preparing the data ----
+## Finding Teen Market Segments ----
+## Exploring and preparing the data ----
 teens <- read.csv("snsdata.csv")
 str(teens)
 
@@ -45,21 +45,21 @@ teens$age <- ifelse(is.na(teens$age), ave_age, teens$age)
 # check the summary results to ensure missing values are eliminated
 summary(teens$age)
 
-## Step 3: Training a model on the data ----
+## Training a model on the data ----
 interests <- teens[5:40]
 interests_z <- as.data.frame(lapply(interests, scale))
 
 set.seed(2345)
 teen_clusters <- kmeans(interests_z, 5)
 
-## Step 4: Evaluating model performance ----
+## Evaluating model performance ----
 # look at the size of the clusters
 teen_clusters$size
 
 # look at the cluster centers
 teen_clusters$centers
 
-## Step 5: Improving model performance ----
+## Improving model performance ----
 # apply the cluster IDs to the original data frame
 teens$cluster <- teen_clusters$cluster
 

@@ -1,0 +1,5 @@
+A = LOAD 'relation_A.txt' AS (ID:int, item:chararray);
+B = LOAD 'relation_B.txt' AS (user:chararray, ID:int);
+D = COGROUP A BY ID, B BY ID;
+
+DUMP D;

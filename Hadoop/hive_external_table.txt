@@ -1,0 +1,13 @@
+CREATE EXTERNAL TABLE IF NOT EXISTS ratings (
+   userID INT,
+   movieID INT,
+   rating INT,
+   time INT)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\t'
+LOCATION '/user/cloudera/ml-100k/external_table';
+
+LOAD DATA INPATH '/user/cloudera/ml-100k/u.data'
+OVERWRITE INTO TABLE ratings;
+
+DROP TABLE ratings;

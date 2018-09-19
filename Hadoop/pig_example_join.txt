@@ -1,0 +1,4 @@
+A = LOAD 'relation_A.txt' AS (ID:int, item:chararray);
+B = LOAD 'relation_B.txt' AS (user:chararray, ID:int);
+C = JOIN A BY $0, B BY $1; 
+DUMP C;

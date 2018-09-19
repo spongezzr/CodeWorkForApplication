@@ -1,0 +1,4 @@
+C = LOAD 'relation_C.txt' AS (user:chararray, item:chararray);
+D = GROUP C BY SIZE(item);
+
+DUMP D;

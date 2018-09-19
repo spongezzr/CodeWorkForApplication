@@ -1,7 +1,7 @@
 ##### Chapter 8: Association Rules -------------------
 
 ## Example: Identifying Frequently-Purchased Groceries ----
-## Step 2: Exploring and preparing the data ----
+## Exploring and preparing the data ----
 
 # load the grocery data into a sparse matrix
 install.packages("arules")
@@ -26,7 +26,7 @@ image(groceries[1:300])
 # visualization of a random sample of 100 transactions
 image(sample(groceries, 100))
 
-## Step 3: Training a model on the data ----
+## Training a model on the data ----
 library(arules)
 
 # default settings result in zero rules learned
@@ -37,14 +37,14 @@ groceryrules <- apriori(groceries, parameter = list(support =
                           0.006, confidence = 0.25, minlen = 2))
 groceryrules
 
-## Step 4: Evaluating model performance ----
+## Evaluating model performance ----
 # summary of grocery association rules
 summary(groceryrules)
 
 # look at the first three rules
 inspect(groceryrules[1:3])
 
-## Step 5: Improving model performance ----
+## Improving model performance ----
 
 # sorting grocery rules by lift
 inspect(sort(groceryrules, by = "lift")[1:5])
